@@ -1,4 +1,4 @@
-from flask import Flask, render_template,render_template, request,redirect,session
+from flask import Flask, render_template,render_template, request,redirect,url_for,session
 from flask_mysqldb import MySQL
 from werkzeug.security import generate_password_hash
 from config import Config
@@ -83,13 +83,11 @@ def logout():
     return redirect("/login")
 #Dashboard route
 @app.route("/dashboard")
-def dashboard():
-
+def dashboard(): 
     if "user" not in session:
         return redirect("/login")
-
-    return f"Welcome {session['user']} to RupeeNest Dashboard"
-
+    return render_template("dashboard.html")
+   
 if __name__ == "__main__":
     app.run(debug=True)
 
