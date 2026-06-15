@@ -87,6 +87,72 @@ def dashboard():
     if "user" not in session:
         return redirect("/login")
     return render_template("dashboard.html")
+#Borrowers route
+@app.route('/borrowers')
+def borrowers():
+
+    cursor = mysql.connection.cursor()
+
+    cursor.execute("SELECT * FROM borrowers")
+
+    borrowers = cursor.fetchall()
+
+    cursor.close()
+
+    return render_template(
+        'borrowers.html',
+        borrowers=borrowers
+    )
+
+
+
+# Add Borrower Route
+
+@app.route('/add_borrower', methods=['GET', 'POST'])
+def add_borrower():
+
+    if request.method == 'POST':
+
+        name = request.form['name']
+        phone = request.form['phone']
+        address = request.form['address']
+
+        cursor = mysql.connection.cursor()
+
+        cursor.execute(
+            """
+            INSERT INTO borrowers
+            (name, phone, address)
+            VALUES (%s, %s, %s)
+            """,
+            (name, phone, address)
+        )
+
+        mysql.connection.commit()
+
+        cursor.close()
+
+        return redirect('/borrowers')
+
+    return render_template('add_borrower.html')
+
+# Delete Borrower Route
+@app.route('/delete_borrower/<int:id>')
+def delete_borrower(id):
+
+    cursor = mysql.connection.cursor()
+
+    cursor.execute(
+        "DELETE FROM borrowers WHERE id=%s",
+        (id,)
+    )
+
+    mysql.connection.commit()
+
+    cursor.close()
+
+    return redirect('/borrowers')
+
    
 if __name__ == "__main__":
     app.run(debug=True)

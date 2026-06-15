@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Borrowers</title>
+</head>
+<body>
+
+    <h2>Borrowers List</h2>
+
+    <a href="/add_borrower">
+        Add Borrower
+    </a>
+
+    <hr>
+
+    {% for borrower in borrowers %}
+
+        <div>
+
+            <h3>{{ borrower[1] }}</h3>
+
+            <p>Phone: {{ borrower[2] }}</p>
+
+            <p>Address: {{ borrower[3] }}</p>
+
+            <a href="/delete_borrower/{{ borrower[0] }}">
+                Delete
+            </a>
+
+        </div>
+
+        <hr>
+
+    {% endfor %}
+
+</body>
+</html>
