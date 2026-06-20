@@ -1,4 +1,4 @@
-1.RupeeNest
+
 RupeeNest is a mobile-first lending management platform developed using Flask and MySQL.
 It helps individual lenders and small finance operators manage borrowers, loans, repayments, interest calculations, due dates, and transaction records through a simple and efficient interface.
 The goal of RupeeNest is to make lending management easier, faster, and more organized for individual lenders and small lending businesses.
@@ -145,7 +145,8 @@ Planned:
 ## Screenshots
 # Login Page
 
-<img width="1080" height="2400" alt="Screenshot_20260620_124426" src="https://github.com/user-attachments/assets/7951853c-7937-4dd9-a084-569bf607fcdf" />
+<img width="960" height="504" alt="image" src="https://github.com/user-attachments/assets/4a654366-37c2-4b4d-9618-0f2bd0b47b24" />
+
 
 # Dashboard
 
@@ -154,7 +155,9 @@ Planned:
 
 # Borrower Management
 
-<img width="1080" height="2400" alt="Screenshot_20260620_124426" src="https://github.com/user-attachments/assets/fbbea8f6-7778-4879-bd1a-d568731fb344" />
+
+<img width="960" height="504" alt="image" src="https://github.com/user-attachments/assets/b88de428-7f28-422f-a5ed-3c5e93eaa8c4" />
+
 
 ### Borrower Profile
 
