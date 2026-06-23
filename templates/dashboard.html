@@ -20,7 +20,7 @@
         <h5>{{ session['user'] }}</h5>
 
         <p class="mb-0">
-            Lending & Fee Management
+            Lending 
         </p>
 
     </div>
@@ -36,7 +36,7 @@
             <div class="card shadow border-0">
                 <div class="card-body text-center">
                     <h6>Total Lent</h6>
-                    <h4>₹50,000</h4>
+                    <h4>₹{{ total_lent }}</h4>
                 </div>
             </div>
         </div>
@@ -45,7 +45,7 @@
             <div class="card shadow border-0">
                 <div class="card-body text-center">
                     <h6>Borrowers</h6>
-                    <h4>12</h4>
+                    <h4>{{ total_borrowers }}</h4>
                 </div>
             </div>
         </div>
@@ -54,7 +54,7 @@
             <div class="card shadow border-0">
                 <div class="card-body text-center">
                     <h6>Interest</h6>
-                    <h4>₹2,500</h4>
+                    <h4>₹{{ total_interest }}</h4>
                 </div>
             </div>
         </div>
@@ -62,8 +62,8 @@
         <div class="col-6 mb-3">
             <div class="card shadow border-0">
                 <div class="card-body text-center">
-                    <h6>Pending</h6>
-                    <h4>5</h4>
+                    <h6>Pending Balance</h6>
+                    <h4>₹{{ total_pending }}</h4>
                 </div>
             </div>
         </div>
@@ -76,15 +76,11 @@
 
     <div class="container d-flex justify-content-around">
 
-        <a href="/dashboard">🏠</a>
+        <a href="/dashboard" class="fs-4" title="Dashboard">🏠</a>
 
-        <a href="#">👥</a>
+        <a href="/borrowers" class="fs-4" title="Borrowers">👥</a>
 
-        <a href="#">💰</a>
-
-        <a href="#">👤</a>
- 
-        
+        <a href="/logout" class="fs-4" title="Logout">🚪</a>
 
     </div>
 

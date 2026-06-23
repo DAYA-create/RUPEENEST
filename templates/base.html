@@ -9,15 +9,33 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
           rel="stylesheet">
 </head>
-
 <body>
+<nav class="navbar navbar-dark">
+    <div class="container">
+        <span class="navbar-brand">
+            💰 RupeeNest
+        </span>
+    </div>
+</nav>
 
 <div class="container">
-
-{% block content %}
-{% endblock %}
-
+    {% block content %}
+    {% endblock %}
 </div>
+
+<!---- Mobile bottom Navigation -->
+<nav class="bottom-nav">
+
+    <a href="/dashboard">🏠</a>
+
+    <a href="/borrowers">👥</a>
+
+    <a href="#">💰</a>
+
+    <a href="#">👤</a>
+
+</nav>
+
 
 </body>
 </html>
